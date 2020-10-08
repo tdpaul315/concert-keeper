@@ -1,5 +1,5 @@
 7.times do 
-   Fan.create(username: Faker::Name.name, age: rand(18..55), vip_guest: [true, false].sample, email: Faker::Internet.email, password_digest: "password")
+   Fan.create(username: Faker::Name.name, age: rand(18..55), vip_guest: [true, false].sample, email: Faker::Internet.email, password_digest: Faker::Internet.password)
 end 
 
  
