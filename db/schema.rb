@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_020904) do
+ActiveRecord::Schema.define(version: 2020_10_08_182817) do
 
   create_table "concerts", force: :cascade do |t|
     t.string "artist"
     t.string "date_time"
     t.string "location"
-    t.decimal "ticket_price"
+    t.float "ticket_price"
     t.boolean "alcohol_served"
     t.integer "fan_id"
   end

@@ -1,0 +1,13 @@
+<h2>You really aren't permitted to edit our concerts but hey I have to include this on my project so let's edit this!</h2>
+
+<form method="POST" action="/concerts/<%=@concert.id%>">
+ <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+
+<p>Artist:  <input type="text" name="artist"> </p>
+<p>Date & Time:  <input type="text" name="date_time"> </p>
+<p>Location:  <input type="text" name="location"> </p>
+<p>Ticket Price:  <input type="text" name="ticket_price"> </p>
+<p>Can I Get Wasted?:  <input type="text" name="alcohol_served"> </p>
+<input type="submit" value="Submit">
+</form>
