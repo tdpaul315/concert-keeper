@@ -2,7 +2,7 @@
    Fan.create(username: Faker::Name.name, age: rand(18..55), vip_guest: [true, false].sample, email: Faker::Internet.email, password: "iluvmykids")
 end 
 
- 
+
 Concert.create(artist: "Beyonce", date_time: Faker::Time.forward(days: 60,  period: :evening, format: :long), location: Faker::Address.full_address, ticket_price: rand(75..350), alcohol_served: [true, false].sample, fan_id: 1)
 Concert.create(artist: "Travis Scott", date_time: Faker::Time.forward(days: 60,  period: :evening, format: :long), location: Faker::Address.full_address, ticket_price: rand(75..350), alcohol_served: [true, false].sample, fan_id: 2)
 Concert.create(artist: "Ariana Grande", date_time: Faker::Time.forward(days: 60,  period: :evening, format: :long), location: Faker::Address.full_address, ticket_price: rand(75..350), alcohol_served: [true, false].sample, fan_id: 3)

@@ -1,10 +1,12 @@
-<h1>Upcoming Concerts </h1>
+<h3 class="white-text ">Upcoming Concerts </h3>
+<hr>
 
-<h2> Are You Ready for COVID-19 Concert Season?</h2>
-    <p> Check out the upcoming concerts below from some of your favorite artists! Concerts will be held virtually but you still have to buy a ticket!</p>
 
-<% @concerts.each_with_index do |concert, index| %>
-    <li><a href="/concerts/<%=concert.id%>"> <%= "#{index+1}. #{concert.artist} " %> </li><br />
+<h4 class="white-text "> Are You Ready for COVID-19 Concert Season?</h4>
+    <p class="white-text "> Check out the upcoming concerts below from some of your favorite artists! Concerts will be held virtually but you still have to buy a ticket!</p>
+
+<% @concert.each_with_index do |concert, index| %>
+    <li><a class="white-text " href="/concerts/<%=concert.id%>"> <%= "#{index+1}. #{concert.artist} " %> </li><br />
 <%end%>
 
  

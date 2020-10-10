@@ -1,4 +1,4 @@
-<h2>Concert Details</h2><br />
+<h5>Concert Details</h5><br />
 
 
 <ul>
@@ -7,5 +7,11 @@
     <li>Location: <%= @concert.location %></li><br />
     <li>Ticket Price: <%= @concert.ticket_price %></li><br />
     <li>Are we getting wasted?: <%= @concert.alcohol_served %></li>
-</ul>
+</ul><br />
+
+<a class="white-text" href="/concerts/<%= @concert.id %>/edit">Edit this Concert</a><br />
+<a class="white-text" href="/concerts">Back to All Concerts</a><br /><br />
+
+<p class="red-text">Delete this Concert..It Sucks!</p>
+<input type="submit" value="Delete">
 

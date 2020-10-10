@@ -1,7 +1,7 @@
 class ConcertController < ApplicationController
 
     get '/concerts' do
-        @concerts = Concert.all
+        @concert = Concert.all
         erb :'concerts/index'
     end 
 
@@ -37,7 +37,7 @@ class ConcertController < ApplicationController
     delete '/concerts/:id' do 
         @concert = Concert.find_by_id(params[:id])
         @concert.destroy
-        redirect to '/concerts'
+        redirect to "/concerts"
     end 
         
 
