@@ -1,15 +1,15 @@
-<h2>You really aren't permitted to edit our concerts but hey I have to include this on my project so let's edit this!</h2>
+<h5 class="white-text">You really aren't permitted to edit our concerts but hey I have to include this on my project so let's edit this!</h5>
 
 <form method="POST" action="/concerts/<%=@concert.id%>">
  <input type="hidden" id="hidden" name="_method" value="PATCH">
-   <!-- <select name="fan_id"> -->
-   <!--!     <% @fans.each do | fan |%>
-   <--!         <option value="<%= fan.id %>"><%= fan.username %></option>
-   <--!     <% end %>
-   <--! </select><br />-->
+   <select class="white-text" name="fan_id"> 
+      <% @fans.each do | fan |%>
+        <option value="<%= fan.id %>"><%= fan.username %></option>
+     <% end %>
+   </select><br />
 
 
-<p>Artist:  <input type="text" name="artist"> </>
+<p>Artist:  <input type="text" name="artist"> </p>
 <p>Date & Time:  <input type="text" name="date_time"> </p>
 <p>Location:  <input type="text" name="location"> </p>
 <p>Ticket Price:  <input type="text" name="ticket_price"> </p>

@@ -1,36 +1,38 @@
 class ConcertController < ApplicationController
 
     get '/concerts' do
-        if logged_in? 
-            @concert = Concert.all
-            erb :'concerts/index'
-        else
-            redirect "/login"
-        end 
-    end 
+        redirect_if_not_logged_in
+        @concert = Concert.all
+        erb :'concerts/index'
+    end
 
     get '/concerts/new' do 
-        erb :'concerts/new' 
+        redirect_if_not_logged_in
+        @fans = Fan.all 
+        erb :"concerts/new"
+    end 
+
+
+    get '/concerts/:id' do 
+        redirect_if_not_logged_in
+        @concert = Concert.find_by_id(params[:id])
+        erb :"concerts/show"
     end 
 
     post '/concerts' do 
-        @concert = Concert.create(params)
-        redirect to "/concerts/#{@concert.id}"
-    end 
-
-    get '/concerts/:id' do 
-        @concert = Concert.find_by_id(params[:id])
-        erb :'concerts/show'
+        concert = current_fan.concerts.build(params)
+        if concert.save
+            redirect "/concerts/#{concert.id}"
+        else
+            redirect "concerts/new"
+        end
     end 
 
     get '/concerts/:id/edit' do 
-        @fan = Fan.all 
+        redirect_if_not_logged_in
+        @fans = Fan.all 
         @concert = Concert.find_by_id(params[:id])
-        if @concert.fan.id == current_fan.id 
-            erb :'concerts/edit' 
-        else 
-            redirect "/concerts/index"
-        end 
+        erb :"concerts/edit"
     end 
 
     patch '/concerts/:id' do 
