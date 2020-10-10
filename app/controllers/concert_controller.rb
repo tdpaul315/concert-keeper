@@ -1,8 +1,12 @@
 class ConcertController < ApplicationController
 
     get '/concerts' do
-        @concert = Concert.all
-        erb :'concerts/index'
+        if logged_in? 
+            @concert = Concert.all
+            erb :'concerts/index'
+        else
+            redirect "/login"
+        end 
     end 
 
     get '/concerts/new' do 
@@ -20,8 +24,13 @@ class ConcertController < ApplicationController
     end 
 
     get '/concerts/:id/edit' do 
+        @fan = Fan.all 
         @concert = Concert.find_by_id(params[:id])
-        erb :'concerts/edit' 
+        if @concert.fan.id == current_fan.id 
+            erb :'concerts/edit' 
+        else 
+            redirect "/concerts/index"
+        end 
     end 
 
     patch '/concerts/:id' do 
@@ -36,8 +45,10 @@ class ConcertController < ApplicationController
 
     delete '/concerts/:id' do 
         @concert = Concert.find_by_id(params[:id])
-        @concert.destroy
-        redirect to "/concerts"
+        if @concert.fan_id == current_fan.id  
+             @concert.destroy
+        end 
+            redirect to "/concerts"
     end 
         
 

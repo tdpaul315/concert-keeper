@@ -14,4 +14,15 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  helpers do 
+    def logged_in? 
+      session[:fan_id]
+    end
+    
+    def current_fan
+      @fan ||= Fan.find_by(id: session[:fan_id])
+    end 
+  
+  end 
+
 end
