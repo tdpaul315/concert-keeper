@@ -16,6 +16,7 @@ class FanController < ApplicationController
     end
 
     get "/fans/:id" do 
+        @concert = Concert.find_by(params[:fan_id])
         @fan = Fan.find_by_id(params[:id])
         erb :"fans/show"
     end 

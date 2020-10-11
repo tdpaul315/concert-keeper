@@ -1,9 +1,17 @@
-<h5>Fan Profile</h5><br />
+<h5>My Profile</h5><br />
 
 
-<ul>
-    <li>Username: <%= @fan.username.capitalize%></li><br />
+<ul style="color:LightGray">
+    <li>Username: <%= @fan.username.titleize%></li><br />
     <li>Age: <%= @fan.age%></li><br />
     <li>Vip Guest: <%= @fan.vip_guest%></li><br />
     <li>Email: <%= @fan.email%></li><br />
 </ul>
+
+<ul>
+<% if current_fan.id == @concert.fan_id %>
+    <li>My Concert(s): <%=@concert.artist%> </li>
+<%end%>
+</ul>
+
+<i class="material-icons">face</i>

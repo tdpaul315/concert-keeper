@@ -17,24 +17,34 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- Link to Google Icons -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             
   </head>
 
-  <body class="light-blue darken-3">
+  <body class="black">
 
     <div class="container">
-    <nav class="black"; class="center-align">
-    <ul>
-        <li><a href="/"><b>HOME</b></a></li>
-        <li><a href="/concerts/new"><b>CREATE CONCERTS</b></a></li>
-        <li><a href="/concerts"><b>VIEW CONCERTS</b></a></li>
-    </ul>
+    <nav>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/concerts/new">CREATE CONCERT</a></li>
+        <li><a href="/concerts">VIEW CONCERT</a></li>
+      </ul>
     </div>
-    </nav>
+  </nav>
+
     <div class="container">
     <% if logged_in? %>
-          <h5 style="color:White;">Hi <%= current_fan.username.capitalize%>!</h5><br />
+          <h5 style="color:White;">Hi <%= current_fan.username.titleize%>!</h5><br />
     <%end%>
+    <% flash.keys.each do | type|  %>
+        <div style="color:White">
+          <%= flash[type] %>
+        </div>
+      <% end %>
 
         <%= yield %>
 

@@ -6,7 +6,7 @@
     <li>Date & Time: <%= @concert.date_time%></li><br />
     <li>Location: <%= @concert.location%></li><br />
     <li>Ticket Price: $<%= @concert.ticket_price%>0</li><br />
-    <li>Are we getting wasted?: <%= @concert.alcohol_served%></li>
+    <li>Are we getting wasted?: <%=@concert.alcohol_served%></li><br />
 </ul><br />
 
 <a class="white-text" href="/concerts/<%= @concert.id %>/edit">Edit this Concert</a><br />

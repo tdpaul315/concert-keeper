@@ -2,7 +2,7 @@
 
 <form method="POST" action="/concerts/<%=@concert.id%>">
  <input type="hidden" id="hidden" name="_method" value="PATCH">
-   <select class="white-text" name="fan_id"> 
+   <select name="fan_id"> 
       <% @fans.each do | fan |%>
         <option value="<%= fan.id %>"><%= fan.username %></option>
      <% end %>
