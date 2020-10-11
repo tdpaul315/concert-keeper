@@ -5,6 +5,12 @@ class FanController < ApplicationController
         erb :"fans/signup"
     end
 
+    get '/fans/:id' do 
+        @concert = Concert.find_by(params[:fan_id])
+        @fan = Fan.find_by_id(params[:id])
+        erb :"fans/show"
+    end 
+
     post '/fans' do
         @fan = Fan.new(params)
         if @fan && @fan.save
@@ -14,10 +20,4 @@ class FanController < ApplicationController
             erb :"fans/signup"
         end
     end
-
-    get "/fans/:id" do 
-        @concert = Concert.find_by(params[:fan_id])
-        @fan = Fan.find_by_id(params[:id])
-        erb :"fans/show"
-    end 
 end 

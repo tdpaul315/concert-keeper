@@ -27,21 +27,22 @@
   <body class="black">
 
     <div class="container">
-    <nav>
+    <nav style="background-color:#1565c0">
       <ul class="right hide-on-med-and-down">
         <li><a href="/">HOME</a></li>
         <li><a href="/concerts/new">CREATE CONCERT</a></li>
         <li><a href="/concerts">VIEW CONCERT</a></li>
+        <li><a href="/fans/<%=current_fan.id%>">MY PROFILE</a></li>
       </ul>
     </div>
   </nav>
 
     <div class="container">
     <% if logged_in? %>
-          <h5 style="color:White;">Hi <%= current_fan.username.titleize%>!</h5><br />
+          <h5 style="color:White;text-align:right"> Hi <%= current_fan.username.titleize%>!</h5><br />
     <%end%>
     <% flash.keys.each do | type|  %>
-        <div style="color:White">
+        <div style="color:Red">
           <%= flash[type] %>
         </div>
       <% end %>
