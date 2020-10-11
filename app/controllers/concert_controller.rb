@@ -48,9 +48,9 @@ class ConcertController < ApplicationController
     delete '/concerts/:id' do 
         @concert = Concert.find_by_id(params[:id])
         if @concert.fan_id == current_fan.id  
-             @concert.destroy
+           @concert.destroy
         end 
-            redirect to "/concerts"
+        redirect to "/concerts"
     end 
         
 

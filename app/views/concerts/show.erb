@@ -1,18 +1,18 @@
 <h5>Concert Details</h5><br />
 
 
-<ul>
+<ul style="color:LightGray">
     <li>Artist: <%= @concert.artist%></li><br />
     <li>Date & Time: <%= @concert.date_time%></li><br />
     <li>Location: <%= @concert.location%></li><br />
-    <li>Ticket Price: <%= @concert.ticket_price%></li><br />
+    <li>Ticket Price: $<%= @concert.ticket_price%>0</li><br />
     <li>Are we getting wasted?: <%= @concert.alcohol_served%></li>
 </ul><br />
 
 <a class="white-text" href="/concerts/<%= @concert.id %>/edit">Edit this Concert</a><br />
 <a class="white-text" href="/concerts">Back to All Concerts</a><br /><br />
 
-<h6 class="white-text" >If you would like to delete, click button below!</h6>
+<h6 class="white-text" >To delete this concert, click Delete</h6>
 <form method="POST" action="/concerts/<%= @concert.id %>">
     <input type="hidden" id="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete">

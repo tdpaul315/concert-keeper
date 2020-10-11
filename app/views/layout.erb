@@ -23,25 +23,24 @@
   <body class="light-blue darken-3">
 
     <div class="container">
-    <nav class="black">
+    <nav class="black"; class="center-align">
     <ul>
         <li><a href="/"><b>HOME</b></a></li>
         <li><a href="/concerts/new"><b>CREATE CONCERTS</b></a></li>
         <li><a href="/concerts"><b>VIEW CONCERTS</b></a></li>
-
-        </ul>
-      </div>
+    </ul>
+    </div>
     </nav>
     <div class="container">
     <% if logged_in? %>
-          <h5 style="color:White;">Hi <%= current_fan.username.capitalize%>!</h5>
+          <h5 style="color:White;">Hi <%= current_fan.username.capitalize%>!</h5><br />
     <%end%>
 
         <%= yield %>
 
       <footer class="branding">
         
-          <h6><a href="/logout">Log Out</a></h6>
+          <h6><a class="white-text" href="/logout"><small>Log Out</small></a></h6>
           
            
         <small>&copy; 2020 <strong>ConcertKeeper</strong></small>

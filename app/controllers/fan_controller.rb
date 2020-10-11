@@ -1,6 +1,7 @@
 class FanController < ApplicationController
 
     get '/fans/signup' do
+        @fans = Fan.all
         erb :"fans/signup"
     end
 
@@ -13,4 +14,9 @@ class FanController < ApplicationController
             erb :"fans/signup"
         end
     end
+
+    get "/fans/:id" do 
+        @fan = Fan.find_by_id(params[:id])
+        erb :"fans/show"
+    end 
 end 
