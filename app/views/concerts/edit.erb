@@ -2,7 +2,7 @@
 
 <form method="POST" action="/concerts/<%=@concert.id%>">
  <input type="hidden" id="hidden" name="_method" value="PATCH">
-   <select name="fan_id"> 
+   <select name="username"> 
       <% @fans.each do | fan |%>
         <option value="<%= fan.id %>"><%= fan.username %></option>
      <% end %>
@@ -13,6 +13,6 @@
 <p>Date & Time:  <input style="color:white" type="text" name="date_time"> </p>
 <p>Location:  <input style="color:white" type="text" name="location"> </p>
 <p>Ticket Price:  <input style="color:white" type="text" name="ticket_price"> </p>
-<p>Can I Get Wasted?:  <input style="color:white" type="text" name="alcohol_served"> </p>
+<p>Will there be drinks?:  <input style="color:white" type="text" name="alcohol_served"> </p>
 <input type="submit" value="Submit">
 </form>

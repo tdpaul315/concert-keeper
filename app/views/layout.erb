@@ -26,17 +26,17 @@
 
   <body class="black">
 
+
     <div class="container">
     <nav style="background-color:#1565c0">
       <ul class="right hide-on-med-and-down">
         <li><a href="/">HOME</a></li>
         <li><a href="/concerts/new">CREATE CONCERT</a></li>
         <li><a href="/concerts">VIEW CONCERT</a></li>
-        <li><a href="/fans/<%=current_fan.id%>">MY PROFILE</a></li>
       </ul>
     </div>
   </nav>
-
+    
     <div class="container">
     <% if logged_in? %>
           <h5 style="color:White;text-align:right"> Hi <%= current_fan.username.titleize%>!</h5><br />
@@ -47,13 +47,13 @@
         </div>
       <% end %>
 
+
         <%= yield %>
 
       <footer class="branding">
-        
+        <% if logged_in? %>
           <h6><a class="white-text" href="/logout"><small>Log Out</small></a></h6>
-          
-           
+        <%end%>    
         <small>&copy; 2020 <strong>ConcertKeeper</strong></small>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-<h5>Concert Details</h5><br />
+<h5 style="color:#1565c0">Concert Details</h5><br />
 
 
 <ul style="color:LightGray">
@@ -6,8 +6,16 @@
     <li>Date & Time: <%= @concert.date_time%></li><br />
     <li>Location: <%= @concert.location%></li><br />
     <li>Ticket Price: $<%= @concert.ticket_price%>0</li><br />
-    <li>Are we getting wasted?: <%=@concert.alcohol_served%></li><br />
+    <li>Will there be drinks?: <% if @concert.alcohol_served == true %>
+                                <p>Yes</p>
+                                <% else %>
+                                <p>No</p> 
+                                 <%end%></li>
 </ul><br />
+
+<div class="center">
+<iframe src="https://giphy.com/embed/l4FsoQbfD0J53F8Xe" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nyckatknight-live-performance-nyck-at-knight-l4FsoQbfD0J53F8Xe">via GIPHY</a></p>
+</div>
 
 <a class="white-text" href="/concerts/<%= @concert.id %>/edit">Edit this Concert</a><br />
 <a class="white-text" href="/concerts">Back to All Concerts</a><br /><br />
@@ -16,6 +24,8 @@
 <form method="POST" action="/concerts/<%= @concert.id %>">
     <input type="hidden" id="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete">
-</form>
+</form><br /><br />
+
+<i style="color:#1565c0" class="medium material-icons">settings_voice</i>
 
 
