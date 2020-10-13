@@ -18,9 +18,9 @@
 </div>
 
 <a class="white-text" href="/concerts/<%= @concert.id %>/edit">Edit this Concert</a><br />
-<a class="white-text" href="/concerts">Back to All Concerts</a><br /><br />
+<a class="white-text" href="/concerts/<%= @concert.id %>/purchase">Purchase this Concert</a><br /><br />
 
-<h6 class="white-text" >To delete this concert, click Delete</h6>
+<p style="color:#f44336;font-size:14px">To delete this concert, click Delete</p>
 <form method="POST" action="/concerts/<%= @concert.id %>">
     <input type="hidden" id="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete">

@@ -1,7 +1,11 @@
 class FanController < ApplicationController
 
+    get '/fans' do 
+        @fans = Fan.all 
+        erb :"fans/index"
+    end 
+
     get '/fans/signup' do
-        @fans = Fan.all
         erb :"fans/signup"
     end
 
@@ -20,4 +24,6 @@ class FanController < ApplicationController
             erb :"fans/signup"
         end
     end
-end 
+
+
+end

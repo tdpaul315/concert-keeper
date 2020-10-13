@@ -28,6 +28,7 @@ class ConcertController < ApplicationController
         end
     end 
 
+
     get '/concerts/:id/edit' do 
         redirect_if_not_logged_in
         @fans = Fan.all 
@@ -51,7 +52,7 @@ class ConcertController < ApplicationController
 
     delete '/concerts/:id' do 
         @concert = Concert.find_by_id(params[:id])
-        if @concert.fan_id == current_fan.id  
+        if admin_logged_in?                         
            @concert.destroy
         end 
         redirect to "/concerts"

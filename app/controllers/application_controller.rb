@@ -21,6 +21,10 @@ class ApplicationController < Sinatra::Base
     def logged_in? 
       session[:fan_id]
     end
+
+    def admin_logged_in?
+      session[:fan_id] == 8
+    end 
     
     def current_fan
       @fan ||= Fan.find_by(id: session[:fan_id])

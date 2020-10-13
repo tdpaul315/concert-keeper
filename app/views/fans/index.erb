@@ -1,0 +1,14 @@
+
+
+
+<body class="container"><br />
+            <%if admin_logged_in? %>
+            <h5>All Users </h5>
+                <% @fans.each_with_index do |fan, index| %>
+                <li><a class="color:#1565c0" href="/fans/<%=fan.id%>"> <%= "#{index+1}. #{fan.username.titleize} " %> </li><br />
+                <%end%>
+            <%else%>
+            <p style="color:red">You do not have access to this page. You must be an admin to view.</p>
+            <% end %>
+</body>
+

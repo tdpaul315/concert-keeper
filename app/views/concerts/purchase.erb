@@ -1,0 +1,16 @@
+<% if @purchase && @purchase.errors %>
+    <% @purchase.errors.full_messages.each do | error | %>
+        <p class="red-text"><%= error %></p>
+    <% end %>
+<% end %>
+
+<h5 style="color:#1565c0" >Purchase your ticket!</h5><hr>
+
+<form method="POST" action="/fans/show">
+    <label class="white-text ">Name:  <input style="color:#1565c0" type="text"> </label>
+    <label class="white-text ">Address:  <input style="color:#1565c0" type="text" > </label>
+    <label class="white-text ">Phone Number:  <input style="color:#1565c0" type="text"> </label>
+    <label class="white-text ">Credit Card No:  <input style="color:#1565c0" type="text"> </label>
+    <label class="white-text ">Concert Artist: <%=@concert.artist%> <input style="color:#1565c0" type="text"> </label>
+    <a href="/fans/<%= @fan.id %>" target="_blank" type="submit" value="Purchase Ticket">
+</form >

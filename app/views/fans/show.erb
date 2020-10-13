@@ -14,14 +14,16 @@
                         <p>No</p> 
                     <%end%></li>
     <li>Email: <%= @fan.email%></li>
-    <li>
+    <li>ID Number: <%= @fan.id%></li>
 </ul>
 
 <ul>
 <% if current_fan.id == @concert.fan_id %>
     <h6 style="color:#f5f5f5" >My Concert(s): <%=@concert.artist%> </h6>
 <%end%>
-</ul>
+</ul><br />
+
+<a class="color:#1565c0" href="/fans/<%= @fan.id %>/edit">Edit this Fan</a><br />
 
 <div class="right-align">
 <iframe src="https://giphy.com/embed/1wqGaJeJYsZBT0lqRU" width="380" height="170" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nba-justin-bieber-celebrity-1wqGaJeJYsZBT0lqRU">via GIPHY</a></p>

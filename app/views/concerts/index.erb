@@ -1,13 +1,12 @@
-<h4 class="white-text ">Upcoming Concerts</h4>
 
-
-
-<h4 class="white-text "> Are You Ready for COVID-19 Concert Season? </h4>
-    <p class="white-text "> Check out the upcoming concerts below from some of your favorite artists! Concerts will be held virtually but you still have to buy a ticket!</p>
+<h5 class="white-text "> Did You Say Concert Season? </h5>
+    <p class="flow-text" style="color:white;font-size:14px"> Check out the upcoming concerts below from some of your favorite artists! Concerts will be held virtually but you still have to purchase a ticket. Click on the artist name to view concert details. Ticket purchasing wii be available soon!</p><hr><br />
         <body class="container">
             <% @concert.each_with_index do |concert, index| %>
-            <li><a class="white-text " href="/concerts/<%=concert.id%>"> <%= "#{index+1}. #{concert.artist} " %> </li><br />
+            <li><a style="color:#1565c0 " href="/concerts/<%=concert.id%>"> <%= "#{index+1}. #{concert.artist} " %> </li><br />
             <%end%>
         </body>
 
- 
+
+
+
