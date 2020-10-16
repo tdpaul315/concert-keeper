@@ -31,7 +31,7 @@ class ConcertController < ApplicationController
 
     get '/concerts/:id/edit' do 
         redirect_if_not_logged_in
-        @fans = Fan.all 
+        @concerts = Concert.all 
         @concert = Concert.find_by_id(params[:id])
         if (@concert.fan.id == current_fan.id) && (@concert.id)
             erb :"concerts/edit"

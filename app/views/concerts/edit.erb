@@ -2,9 +2,9 @@
 
 <form method="POST" action="/concerts/<%=@concert.id%>">
  <input type="hidden" id="hidden" name="_method" value="PATCH">
-   <select name="username"> 
-      <% @fans.each do | fan |%>
-        <option value="<%= fan.id %>"><%= fan.username %></option>
+   <select name="artist"> 
+      <% @concerts.each do | concert |%>
+        <option value="<%= concert.id %>"><%= concert.artist %></option>
      <% end %>
    </select><br />
 

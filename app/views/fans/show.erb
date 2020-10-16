@@ -18,7 +18,7 @@
 </ul>
 
 <ul>
-<% if current_fan.id == @concert.fan_id %>
+<% if @fan.id == @concert.fan_id %>
     <h6 style="color:#f5f5f5" >My Concert(s): <%=@concert.artist%> </h6>
 <%end%>
 </ul><br />
