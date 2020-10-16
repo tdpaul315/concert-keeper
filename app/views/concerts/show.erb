@@ -17,7 +17,9 @@
 <iframe src="https://giphy.com/embed/l4FsoQbfD0J53F8Xe" width="480" height="267" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/nyckatknight-live-performance-nyck-at-knight-l4FsoQbfD0J53F8Xe">via GIPHY</a></p>
 </div>
 
-<a class="white-text" href="/concerts/<%= @concert.id %>/edit">Edit this Concert</a><br />
+<% if current_fan.id == @concert.fan_id %>
+    <a class="white-text" href="/concerts/<%= @concert.id %>/edit">Edit this Concert</a><br />
+<% end %>
 <a class="white-text" href="/concerts/<%= @concert.id %>/purchase">Purchase this Concert</a><br /><br />
 
 <p style="color:#f44336;font-size:14px">To delete this concert, click Delete</p>
